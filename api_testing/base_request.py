@@ -5,6 +5,7 @@ import pprint
 class BaseRequest:
     def __init__(self, base_url):
         self.base_url = base_url
+        # set headers, authorisation etc
 
     def _request(self, url, request_type, data=None, expected_error=False):
         stop_flag = False
