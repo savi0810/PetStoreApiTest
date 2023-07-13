@@ -31,10 +31,8 @@ class BaseRequest:
         pprint.pprint('**********')
         return response
 
-    def get(self, endpoint, params, expected_error=False):
-        url = f'{self.base_url}/{endpoint}/'
-        params = params if isinstance(params, list) else [params]
-        url += '&'.join(params)
+    def get(self, endpoint, endpoint_id, expected_error=False):
+        url = f'{self.base_url}/{endpoint}/{endpoint_id}'
         response = self._request(url, 'GET', expected_error=expected_error)
         return response.json()
 
@@ -52,7 +50,7 @@ class BaseRequest:
 BASE_URL_PETSTORE = 'https://petstore.swagger.io/v2'
 base_request = BaseRequest(BASE_URL_PETSTORE)
 
-pet_info = base_request.get('pet', '1')
+pet_info = base_request.get('pet', 1)
 pprint.pprint(pet_info)
 pass
 
