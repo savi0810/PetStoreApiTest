@@ -14,6 +14,9 @@ pprint.pprint(response.reason)
 pprint.pprint(response.text)
 pprint.pprint(response.json())
 pprint.pprint('**********')
+# comment
+# Get with filters
+# get https://petstore.swagger.io/v2/pet?bod=20220506&breed=corgi
 pass
 
 # POST
@@ -37,6 +40,8 @@ pet_info = json.loads(response.text)
 assert data['name'] == pet_info['name']
 assert data['name'] == response.json()['name']
 pprint.pprint('**********')
+# comment
+# POST, PATCH, PUT
 pass
 
 # DELETE
