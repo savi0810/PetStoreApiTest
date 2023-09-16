@@ -57,12 +57,15 @@ def test_params_nested(param1, param2):
 # Example with params ids
 # Param filtering users posts by id
 # https://jsonplaceholder.typicode.com/posts?userId=1
+@pytest.fixture
+def base_url():
+    return 'https://jsonplaceholder.typicode.com'
+
 @pytest.mark.parametrize(
     'userId', [-1, 0, 'a', 11, 9],
     ids=["negative", "zero", "letter", "out_of_range", "valid_value"]
 )
-def test_with_ids(userId):
-    base_url = 'https://jsonplaceholder.typicode.com'
+def test_with_ids(base_url, userId):
     assert requests.get(base_url + "/posts", params={'userId': userId}).json() == []
 
 
