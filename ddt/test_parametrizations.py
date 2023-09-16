@@ -80,6 +80,16 @@ def test_param_skip(test_input, expected):
     assert eval(test_input) == expected
 
 
+@pytest.fixture(params=[1, 2, 3])
+def fixture_param(request):
+    return request.param
+
+
+@pytest.mark.parametrize('param', [10, 20, 30])
+def test_parametrized_fixture(fixture_param, param):
+    assert fixture_param + param == 11
+
+
 @pytest.mark.parametrize('param', [
     random.randint(0, 100)
 ])
