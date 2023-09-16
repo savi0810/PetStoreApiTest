@@ -70,7 +70,7 @@ def test_with_ids(base_url, userId):
 
 
 @pytest.mark.parametrize("test_input, expected", [
-    ("3+5", 8),
+    pytest.param("3+5", 8, id="example_name"),
     ("2+4", 6),
     pytest.param("6*9", 42, marks=pytest.mark.skip(reason="JIRA-12312"))
 ])
