@@ -13,8 +13,7 @@ pprint.pprint(response.url)
 pprint.pprint(response.status_code)
 pprint.pprint(response.reason)
 pprint.pprint(response.text)
-if response.text:
-    pprint.pprint(response.json())
+pprint.pprint(response.json())
 pprint.pprint('**********')
 
 print("\n2. POST User - Create:")
@@ -41,9 +40,8 @@ pprint.pprint(response.status_code)
 pprint.pprint(response.reason)
 pprint.pprint(response.text)
 
-if response.text:
-    user_info = json.loads(response.text)
-    pprint.pprint(user_info)
+user_info = json.loads(response.text)
+pprint.pprint(user_info)
     
 pprint.pprint('**********')
 
@@ -61,8 +59,7 @@ response = requests.get(f'{BASE_URL_PETSTORE}/user/testuser1135')
 pprint.pprint(response.status_code)
 pprint.pprint(response.reason)
 pprint.pprint(response.text)
-if response.text:
-    pprint.pprint(response.json())
+pprint.pprint(response.json())
     
 pprint.pprint('**********')
 
@@ -75,9 +72,7 @@ pprint.pprint(response.url)
 pprint.pprint(response.status_code)
 pprint.pprint(response.reason)
 pprint.pprint(response.text)
-if response.text:
-    inventory_data = response.json()
-    pprint.pprint(inventory_data)
+pprint.pprint(response.json())
 
 pprint.pprint('**********')
 
@@ -98,9 +93,8 @@ pprint.pprint(response.status_code)
 pprint.pprint(response.reason)
 pprint.pprint(response.text)
 
-if response.text:
-    order_response = json.loads(response.text)
-    pprint.pprint(order_response)    
+order_response = json.loads(response.text)
+pprint.pprint(order_response)    
     
 print("\n3. GET Store Order after creation:")
 response = requests.get(f'{BASE_URL_PETSTORE}/store/order/{order_id}')
@@ -109,9 +103,8 @@ pprint.pprint(response.status_code)
 pprint.pprint(response.reason)
 pprint.pprint(response.text)
 
-if response.text:
-    order_info = json.loads(response.text)
-    pprint.pprint(order_info)
+order_info = json.loads(response.text)
+pprint.pprint(order_info)
             
 pprint.pprint('**********')
 
@@ -130,7 +123,6 @@ response = requests.get(f'{BASE_URL_PETSTORE}/store/order/{order_id}')
 pprint.pprint(response.status_code)
 pprint.pprint(response.reason)
 pprint.pprint(response.text)
-if response.text:
-    pprint.pprint(response.json())
+pprint.pprint(response.json())
         
 pprint.pprint('**********')
