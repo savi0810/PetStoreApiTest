@@ -1,0 +1,92 @@
+=== TESTS FOR USER ===
+
+1. GET User (before creation):
+'https://petstore.swagger.io/v2/user/testuser1135'
+404
+'Not Found'
+'{"code":1,"type":"error","message":"User not found"}'
+{'code': 1, 'message': 'User not found', 'type': 'error'}
+'**********'
+
+2. POST User - Create:
+200
+'OK'
+'{"code":200,"type":"unknown","message":"1135"}'
+
+3. GET User after creation:
+404
+'Not Found'
+'{"code":1,"type":"error","message":"User not found"}'
+{'code': 1, 'message': 'User not found', 'type': 'error'}
+'**********'
+
+4. DELETE User:
+200
+'OK'
+'{"code":200,"type":"unknown","message":"testuser1135"}'
+'**********'
+
+5. GET User after deletion:
+404
+'Not Found'
+'{"code":1,"type":"error","message":"User not found"}'
+{'code': 1, 'message': 'User not found', 'type': 'error'}
+'**********'
+
+=== TESTS FOR STORE ===
+
+1. GET Store Inventory:
+'https://petstore.swagger.io/v2/store/inventory'
+200
+'OK'
+('{"sold":33,"string":517,"sold '
+ '":1,"pending":23,"available":254,"weisskeiner1":1,"awaiable":1,"packing":1,"swimming":2,"invalid_status":1,"available, '
+ 'sold":1,"available_DEV":1,"flying":3,"invalid":2,"pending,out_of_stock":1,"disponible":1}')
+{'available': 254,
+ 'available, sold': 1,
+ 'available_DEV': 1,
+ 'awaiable': 1,
+ 'disponible': 1,
+ 'flying': 3,
+ 'invalid': 2,
+ 'invalid_status': 1,
+ 'packing': 1,
+ 'pending': 23,
+ 'pending,out_of_stock': 1,
+ 'sold': 33,
+ 'sold ': 1,
+ 'string': 517,
+ 'swimming': 2,
+ 'weisskeiner1': 1}
+'**********'
+
+2. POST Store Order:
+200
+'OK'
+'{"id":1521,"petId":1,"quantity":1,"shipDate":"2023-10-01T10:00:00.000+0000","status":"placed","complete":true}'
+{'complete': True,
+ 'id': 1521,
+ 'petId': 1,
+ 'quantity': 1,
+ 'shipDate': '2023-10-01T10:00:00.000+0000',
+ 'status': 'placed'}
+
+3. GET Store Order after creation:
+404
+'Not Found'
+'{"code":1,"type":"error","message":"Order not found"}'
+{'code': 1, 'message': 'Order not found', 'type': 'error'}
+'**********'
+
+4. DELETE Store Order:
+404
+'Not Found'
+'{"code":404,"type":"unknown","message":"Order Not Found"}'
+'**********'
+
+5. GET Store Order after deletion:
+404
+'Not Found'
+'{"code":1,"type":"error","message":"Order not found"}'
+{'code': 1, 'message': 'Order not found', 'type': 'error'}
+'**********'
